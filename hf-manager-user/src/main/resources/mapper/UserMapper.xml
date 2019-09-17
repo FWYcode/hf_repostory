@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hf.game.mapper.UserMapper">
+    <resultMap id="findByIdMap" type="com.hf.game.module.pojo.userManager.User">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <collection property="roles" ofType="com.hf.game.module.pojo.userManager.Role">
+            <result property="id" column="id"/>
+            <result property="name" column="name"/>
+            <collection property="powers" ofType="com.hf.game.module.pojo.userManager.Power">
+                <result property="id" column="id"/>
+                <result property="name" column="name"/>
+            </collection>
+        </collection>
+    </resultMap>
+    <sql id="link_table_colum">
+        u.id, u.name, r.id ,r.name,p.id,p.name
+     </sql>
+    <sql id="user_table_aliase">
+        user AS u 
+    </sql>
+    <sql id="role_table_aliase">
+        role AS  r
+    </sql>
+    <sql id="power_table_aliase">
+        power AS p
+    </sql>
+    <sql id="user_role">
+        user_role AS ur
+    </sql>
+    <sql id="role_power">
+        role_power AS rp
+    </sql>
+    <select id="selectById" resultMap="findByIdMap" parameterType="Long">
+    SELECT 
+    <include refid="link_table_colum"/>
+        FROM 
+        <include refid="user_table_aliase"/>
+        LEFT JOIN 
+        <include refid="user_role"/>
+        ON ur.user_id=u.id 
+        LEFT JOIN 
+        <include refid="role_table_aliase"/>
+        ON r.id=ur.role_id
+        LEFT JOIN 
+        <include refid="role_power"/>
+        ON rp.role_id=r.id
+        LEFT JOIN
+        <include refid="power_table_aliase"/>
+        ON p.id=rp.power_id
+        WHERE u.id=#{id}
+    </select>
+</mapper>

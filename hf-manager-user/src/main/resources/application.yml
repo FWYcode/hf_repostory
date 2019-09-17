@@ -1,0 +1,16 @@
+server:
+  port: 8082
+  address: 127.0.0.1
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.commons.JakartaCommonsLoggingImpl
+  type-aliases-package: com.hf.game.module.pojo.userManager
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/user_info?serverTimezone=GMT%2B8
+    password: 123
+    username: root
+    type: com.alibaba.druid.pool.DruidDataSource
+shiroServerUrlPrefix: "http://${server.address}:${server.port}"

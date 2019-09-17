@@ -1,0 +1,48 @@
+{
+  "properties": {
+    "id": {
+      "type": "keyword"
+    },
+    "item_name": {
+      "analyzer": "ik_max_word",
+      "search_analyzer": "ik_smart",
+      "type": "text"
+    },
+    "sell_point": {
+      "analyzer": "ik_max_word",
+      "search_analyzer": "ik_smart",
+      "type": "text"
+    },
+    "price": {
+      "type": "float"
+    },
+    "barcode": {
+      "index": false,
+      "type": "keyword"
+    },
+    "image": {
+      "index": false,
+      "type": "keyword"
+    },
+    "category_id1": {
+      "type": "keyword"
+    },
+    "category_id2": {
+      "type": "keyword"
+    },
+    "status": {
+      "type": "keyword"
+    },
+    "item_brand": {
+      "type": "keyword"
+    },
+    "time_stamp": {
+      "format": "yyyy-MM-dd HH:mm:ss",
+      "type": "date"
+    },
+    "pub_time": {
+      "format": "yyyy-MM-dd HH:mm:ss",
+      "type": "date"
+    }
+  }
+}

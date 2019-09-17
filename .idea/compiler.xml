@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="hf-comm" />
+        <module name="hf-common" />
+        <module name="hf-manager-api" />
+        <module name="hf-manager-items" />
+        <module name="hf-manager-page-static" />
+        <module name="hf-manager-search" />
+        <module name="hf-manager-sso" />
+        <module name="hf-manager-user" />
+        <module name="hf-modules" />
+        <module name="hf-redis-quartz" />
+        <module name="hfmodules" />
+        <module name="service-register-discovery" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="hf-comm" target="1.8" />
+      <module name="hf-common" target="1.8" />
+      <module name="hf-manager-api" target="1.8" />
+      <module name="hf-manager-items" target="1.8" />
+      <module name="hf-manager-page-static" target="1.8" />
+      <module name="hf-manager-search" target="1.8" />
+      <module name="hf-manager-sso" target="1.8" />
+      <module name="hf-manager-user" target="1.8" />
+      <module name="hf-modules" target="1.8" />
+      <module name="hf-parent" target="1.8" />
+      <module name="hf-redis-quartz" target="1.8" />
+      <module name="hfmodules" target="1.8" />
+      <module name="service-discovery" target="1.8" />
+      <module name="service-register-discovery" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+<div style="width:100%;height:1900px;background-color: bisque;"></div>
+<div style="width:100%;height:1900px;background-color: bisque;"></div>
+<a href="#" id="go">回到顶部</a>
+</body>
+<script type="text/javascript">
+    /*//1：jQuery.fn是jQuery的原型对象也可以写成 $.fn
+    //2：添加myScrollTo方法到jQuery原型($.fn)
+    jQuery.fn.myScrollTo = function (speed) {
+        var targetOffset = $(this).offset().top;
+        console.log(targetOffset);//去除默认样式后是 0
+        //$(this).offset()：获得位移对象（此时其实啥也没做）
+        //$(this).offset().top：获得位移高度
+        $('html,body').animate({scrollTop: 0}, speed);
+        return this;
+    };
+
+    // 使用自定义的方法
+    $("#go").click(function () {
+        $("body").myScrollTo(1000);//调用，并传入速度
+        return false;//阻止默认事件
+    });*/
+    $('#go').click(function () {
+        $('html,body').animate({scrollTop:'0'},10000,'linear');
+    })
+
+</script>
+</html>

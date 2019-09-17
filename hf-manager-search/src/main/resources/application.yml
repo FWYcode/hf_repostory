@@ -1,0 +1,21 @@
+hf:
+  search:
+    host:
+      list: 192.168.0.121:9200
+  item:
+    index: hf_items
+    type: doc
+    source_filed: id,item_name,sell_point,price,barcode,image,category_id1,category_id2,status,item_barnd,time_stamp,pub_time
+server:
+  port: 8084
+  address: 192.168.0.121
+spring:
+#  thymeleaf:
+#    cache: false
+#    prefix: classpath:/static/
+  application:
+    name: item-seach
+eureka:
+  client:
+    service-url:
+     defaultZone: http://${server.address}:9999/eureka/

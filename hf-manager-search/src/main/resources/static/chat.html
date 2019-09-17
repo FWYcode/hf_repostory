@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello WebSocket</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="../main.css" rel="stylesheet">
+    <script src="/webjars/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/1.0.2/sockjs.js"></script>
+    <script src="/webjars/stomp-websocket/2.3.3/stomp.js"></script>
+    <script src="../chat.js"></script>
+</head>
+<body>
+<noscript><h2 style="color: #ff0000">fjdoisjfisodjfi</h2></noscript>
+<div id="main-content" class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="connect">websocket connection</label>
+                    <button id="connect" class="btn btn-default" type="submit">connect</button>
+                    <button id="disconnect" class="btn btn-default" type="submit" >disconnect</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label >在线人数:</label>
+                    <label id="count" th:text="${count}">what is name?</label>
+                    <input type="text" id="id" class="form-control" th:value="${id}">
+                    <input type="text" id="content" class="form-control" placeholder="your name">
+                    <input type="text" id="pid" class="form-control" placeholder="your pid">
+                </div>
+                <button id="send" class="btn btn-default" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    <div class=" row">
+        <div class="col-md-12">
+            <table id="conversation" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>greeting</th>
+                </tr>
+                </thead>
+                <tbody id="greetings"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/hf-comm/hf-comm.iml" filepath="$PROJECT_DIR$/hf-comm/hf-comm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hf-common/hf-common.iml" filepath="$PROJECT_DIR$/hf-common/hf-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hf-manager-api/hf-manager-api.iml" filepath="$PROJECT_DIR$/hf-manager-api/hf-manager-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hf-manager-items/hf-manager-items.iml" filepath="$PROJECT_DIR$/hf-manager-items/hf-manager-items.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hf-manager-page-static/hf-manager-page-static.iml" filepath="$PROJECT_DIR$/hf-manager-page-static/hf-manager-page-static.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hf-manager-search/hf-manager-search.iml" filepath="$PROJECT_DIR$/hf-manager-search/hf-manager-search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hf-manager-sso/hf-manager-sso.iml" filepath="$PROJECT_DIR$/hf-manager-sso/hf-manager-sso.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hf-manager-user/hf-manager-user.iml" filepath="$PROJECT_DIR$/hf-manager-user/hf-manager-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hf-modules/hf-modules.iml" filepath="$PROJECT_DIR$/hf-modules/hf-modules.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hf-parent.iml" filepath="$PROJECT_DIR$/hf-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hf-redis-quartz/hf-redis-quartz.iml" filepath="$PROJECT_DIR$/hf-redis-quartz/hf-redis-quartz.iml" />
+      <module fileurl="file://D:\dve_set\hf-parent\hf-common\src\main\main.iml" filepath="D:\dve_set\hf-parent\hf-common\src\main\main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-register-discovery/service-register-discovery.iml" filepath="$PROJECT_DIR$/service-register-discovery/service-register-discovery.iml" />
+      <module fileurl="file://D:\dve_set\hf-parent\service-register-discovery\src\test\test.iml" filepath="D:\dve_set\hf-parent\service-register-discovery\src\test\test.iml" />
+    </modules>
+  </component>
+</project>

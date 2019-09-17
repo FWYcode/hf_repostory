@@ -1,0 +1,12 @@
+server:
+  port: 9999
+  address: 192.168.0.121
+spring:
+  application:
+    name: server_discovery
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${server.address}:${server.port}/eureka/
+    fetch-registry: false
+    register-with-eureka: false

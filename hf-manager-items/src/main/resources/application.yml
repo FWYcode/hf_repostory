@@ -1,0 +1,38 @@
+server:
+  port: 8083
+  address: 192.168.0.121
+
+spring:
+  application:
+    name: item-server
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/item?serverTimezone=GMT%2B8
+  application:
+    name: item-server
+  jpa:
+
+#    show-sql: true
+    database: mysql
+  redis:
+    cluster:
+      nodes: 192.168.154.135:6379,192.168.154.130:6379,192.168.154.136:6379,192.168.154.132:6379,192.168.154.133:6379,192.168.154.134:6379
+    jedis:
+      pool:
+        max-active: 300
+        max-wait: -1
+        max-idle: 100
+        min-idle: 20
+    database: 0
+    timeout: 60000
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${server.address}:9999/eureka/

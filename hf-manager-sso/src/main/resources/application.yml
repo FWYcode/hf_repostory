@@ -1,0 +1,26 @@
+server:
+  port: 8081
+  address: 192.168.0.100
+cas:
+  filter:
+    url:
+      pattern: /cas
+  server:
+    url:
+      prefix: http://192.168.0.100:8080/cas
+  login:
+    url: ${cas.server.url.prefix}/login
+  logout:
+    uri: ${cas.server.url.prefix}/logout
+shiro:
+  server:
+    url:
+      prefix: http://${server.address}:${server.port}
+login:
+  url: ${cas.login.url}?service=${shiro.server.url.prefix}${cas.filter.url.pattern}
+  success:
+    url: /test
+unauthorized:
+    url: /error/403
+logout:
+  url: ${cas.login.url}?${shiro.server.url.prefix}${cas.filter.url.pattern}

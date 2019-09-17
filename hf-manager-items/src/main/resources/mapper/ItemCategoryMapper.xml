@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hf.game.dao.mappers.ItemCategoryMapper">
+    <resultMap id="nodeMap" type="com.hf.game.module.items.ext.ItemCategoryNode">
+        <id column="fid" property="id"/>
+        <result column="fname +" property="categoryName"/>
+        <collection property="children" ofType="com.hf.game.module.items.ext.ItemCategoryNode">
+            <id column="tid" property="id"/>
+            <result column="tname" property="categoryName"/>
+            <collection property="children" ofType="com.hf.game.module.items.ext.ItemCategoryNode">
+                <id column="thid" property="id"/>
+                <result column="thname" property="categoryName"/>
+            </collection>
+        </collection>
+    </resultMap>
+    <sql id="catsql1">
+        a.id fid,
+        a.category_name fname,
+        b.id tid,
+        b.category_name tname,
+        c.id thid,
+        c.category_name thname
+    </sql>
+    <sql id="catjoin">
+        item_category AS  a
+        LEFT JOIN item_category AS b
+        ON b.parent_id =a.id
+        LEFT JOIN item_category
+        c ON c.parent_id =b.id
+        WHERE a.parent_id=0
+    </sql>
+    <select id="findAll" resultMap="nodeMap">
+        SELECT
+        <include refid="catsql1"/>
+        FROM
+        <include refid="catjoin"/>
+        ORDER BY a.id
+    </select>
+
+</mapper>

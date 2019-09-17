@@ -1,0 +1,6 @@
+spring:
+  freemarker:
+    charset: utf-8
+    prefix: classpath:/templates/*
+    suffix: .ftl
+    content-type: text/html
